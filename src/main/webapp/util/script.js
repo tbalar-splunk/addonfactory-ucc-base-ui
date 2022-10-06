@@ -14,6 +14,16 @@ export function getBuildDirPath() {
     return '';
 }
 
+export function getRoutes() {
+    return [{
+        name: 'configuration',
+        componentName: 'configuration' // baseon type
+    }, {
+        name: 'inputs',
+        componentName: 'inputs'
+    }]
+}
+
 export function loadGlobalConfig() {
     // Get the configuraiton json file in sync mode
     return axios.get(`${getBuildDirPath()}/globalConfig.json`).then((res) => {

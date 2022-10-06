@@ -1,6 +1,8 @@
 import React, { useState, useCallback, useEffect } from 'react';
 
 import { _ } from '@splunk/ui-utils/i18n';
+import { Link } from 'react-router-dom';
+
 import TabBar from '@splunk/react-ui/TabBar';
 import ToastMessages from '@splunk/react-toast-notifications/ToastMessages';
 import ColumnLayout from '@splunk/react-ui/ColumnLayout';
@@ -70,6 +72,7 @@ function ConfigurationPage() {
                     </ColumnLayout.Column>
                 </Row>
             </ColumnLayout>
+            <Link to={`new`}>Connections</Link>
             <TabBar activeTabId={activeTabId} onChange={handleChange}>
                 {tabs.map((tab) => (
                     <TabBar.Tab key={tab.name} label={_(tab.title)} tabId={tab.name} />
